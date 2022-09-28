@@ -11,7 +11,7 @@ FILE_EXTENSION="${FILE_NAME##*.}"
 mkdir -p "$DIR"
 if [ ! -f $OUT ]; then
 echo "Converting $IN"
-ffmpeg -i $IN -vf "fps=15,scale=720:-1" -q:v 30 -compression_level 6 -loop 0 -acodec copy -vcodec copy ${OUT/$FILE_EXTENSION/$2}
+ffmpeg -i $IN -vf "fps=15,scale=720:-1" -q:v 30 -compression_level 6 -loop 0 ${OUT/$FILE_EXTENSION/$2}
 else
 echo "Converted already."
 fi
