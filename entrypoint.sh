@@ -11,7 +11,7 @@ FILE_EXTENSION="${FILE_NAME##*.}"
 mkdir -p "$DIR"
 if [ ! -f $OUT ]; then
 echo "Converting $IN"
-ffmpeg -i $IN -acodec copy -vcodec copy ${OUT/$FILE_EXTENSION/$2}
+ffmpeg -i $IN $4 -acodec copy -vcodec copy ${OUT/$FILE_EXTENSION/$2}
 else
 echo "Converted already."
 fi
